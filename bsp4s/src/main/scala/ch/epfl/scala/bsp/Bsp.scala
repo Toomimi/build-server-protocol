@@ -745,7 +745,7 @@ object OutputPathsResult {
 final case class PackageFeatures(
     packageId: String,
     targets: List[BuildTargetIdentifier],
-    availableFeatures: List[String],
+    availableFeatures: List[Map[String, List[String]]],
     enabledFeatures: List[String]
 )
 

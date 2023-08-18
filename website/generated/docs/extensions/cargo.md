@@ -43,7 +43,7 @@ export interface PackageFeatures {
   targets: BuildTargetIdentifier[];
 
   /** The list of available features for the Cargo package. */
-  availableFeatures: string[];
+  availableFeatures: Map<string, string[]>[];
 
   /** The list of enabled features for the Cargo package. */
   enabledFeatures: string[];

@@ -35,6 +35,17 @@ list Features {
     member: String
 }
 
+list FeaturesDependencyGraph {
+    member: FeatureDependencyGraph
+}
+
+/// The feature dependency graph is a mapping between
+/// feature and the features it turns on
+map FeatureDependencyGraph {
+    key: String,
+    value: Features
+}
+
 structure PackageFeatures {
     /// The Cargo package identifier.
     @required
@@ -44,7 +55,7 @@ structure PackageFeatures {
     targets: BuildTargetIdentifiers
     /// The list of available features for the Cargo package.
     @required
-    availableFeatures: Features
+    availableFeatures: FeaturesDependencyGraph
     /// The list of enabled features for the Cargo package.
     @required
     enabledFeatures: Features
